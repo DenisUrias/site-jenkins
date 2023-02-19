@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		docker build . -t site-jenkins
+#		docker build . -t site-jenkins
             }
         }
         stage('Test') {
