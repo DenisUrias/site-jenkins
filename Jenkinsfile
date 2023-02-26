@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build -t siteprincipal .'
+                sh 'sudo docker build -t siteprincipal .'
             }
         }
         stage('Test') {
