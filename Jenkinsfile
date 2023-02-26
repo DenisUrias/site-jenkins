@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build /var/jenkins_home/workspace/teste1/.'
+                sh 'docker build -t siteprincipal /var/jenkins_home/workspace/teste1/.'
             }
         }
         stage('Test') {
