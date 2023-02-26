@@ -8,6 +8,9 @@ pipeline {
                     image 'siteprincipal'
                 }
             }
+            steps {
+                echo 'Building..'
+            }
         }
         stage('Test') {
             steps {
