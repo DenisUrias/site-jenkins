@@ -3,9 +3,13 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {
+                docker {
+                    build . 
+                }
+            }
             steps {
                 echo 'Building...'
-                sh 'docker build -t siteprincipal .'
             }
         }
         stage('Test') {
