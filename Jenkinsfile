@@ -1,17 +1,15 @@
 pipeline {
-    agent any
-//    agent {
-//        dockerfile{
- //           filename 'Dockerfile'
- //           dir '.'
- //           args '-v /var/run/docker.sock:/var/run/docker.sock'
- //           args '-v /run:/run'
-//        }
     
-//    }
+    agent any
 
     stages {
         stage('Build') {
+
+            steps {
+                echo 'Building...'
+                
+            }            
+            
             agent {
                 dockerfile{
                     additionalBuildArgs '--tag siteprincipal'
@@ -19,16 +17,19 @@ pipeline {
                     dir '.'
                 }
             }
-            steps {
-                echo 'Building...'
+            
+//            steps {
+//                echo 'Building...'
                 
-            }
+//            }
         }
+        
         stage('Test') {
             steps {
                 echo 'Testing...'
             }
         }
+        
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
