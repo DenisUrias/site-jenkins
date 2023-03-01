@@ -16,7 +16,7 @@ pipeline {
                 dockerfile{
                     filename 'Dockerfile'
                     dir '.'
-                    tag 'SitePrincipal'
+                    args '--tag SitePrincipal'
                 }
             }
             steps {
