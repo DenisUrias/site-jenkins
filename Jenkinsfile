@@ -14,9 +14,9 @@ pipeline {
         stage('Build') {
             agent {
                 dockerfile{
+                    additionalBuildArgs '--tag SitePrincipal'
                     filename 'Dockerfile'
                     dir '.'
-                    args '--name SitePrincipal'
                 }
             }
             steps {
