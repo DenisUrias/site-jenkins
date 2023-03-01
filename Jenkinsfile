@@ -12,12 +12,15 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Building...'
+            agent {
                 dockerfile{
                     filename 'Dockerfile'
                     dir '.'
                 }
+            }
+            steps {
+                echo 'Building...'
+                
             }
         }
         stage('Test') {
