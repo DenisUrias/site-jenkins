@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  siteprincipal:
+    image: denisurias/siteprincipal:latest
+    privileged: true
+    container_name: siteprincipal
+    ports:
+    - '81:80'
+    - '4431:443'
+    restart: always
