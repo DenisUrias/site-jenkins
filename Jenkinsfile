@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'docker tag siteprincipal denisurias/siteprincipal:0.1'
-                withDockerRegistry([ credentialsId: "denisurias", url: "" ]){
+                withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
                     sh 'docker push denisurias/siteprincipal:0.1'
                 }
             }
