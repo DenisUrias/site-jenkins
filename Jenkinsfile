@@ -31,11 +31,16 @@ pipeline {
         }
         
         stage('Deploy') {
-            agent any
+            agent {
+                docker {
+                    tag siteprincipal 'denisurias/siteprincipal:0.1'
+                    push 'denisurias/siteprincipal:0.1'
+                }
+            }
             steps {
                 echo 'Deploying...'
-                sh docker tag siteprincipal 'denisurias/siteprincipal:0.1'
-                sh docker push 'denisurias/siteprincipal:0.1'
+//                sh docker tag siteprincipal 'denisurias/siteprincipal:0.1'
+//                sh docker push 'denisurias/siteprincipal:0.1'
             }
         }
     }
