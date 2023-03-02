@@ -43,6 +43,7 @@ pipeline {
                 }
 
                 echo 'Subindo container...'
+                
                 sh 'docker-compose up -d'
 //                sh 'docker run -d -p 4431:443 -p 81:80 --name siteprincipal --restart always denisurias/siteprincipal:latest'
 
