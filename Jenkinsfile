@@ -33,8 +33,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                docker tag siteprincipal denisurias/siteprincipal:0.1
-                docker push denisurias/siteprincipal:0.1
+                docker tag siteprincipal 'denisurias/siteprincipal:0.1'
+                docker push 'denisurias/siteprincipal:0.1'
             }
         }
     }
