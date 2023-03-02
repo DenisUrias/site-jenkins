@@ -31,19 +31,11 @@ pipeline {
         }
         
         stage('Deploy') {
-            agent {
-                docker {
-                    image 'siteprincipal'
-                    args 'docker tag siteprincipal denisurias/siteprincipal:0.1'
-                    args 'docker push denisurias/siteprincipal:0.1'
- //                   registryCredentialsId 'dockerhub'
- //                   registryUrl 'hub.docker.com'
-                }
-            }
+            agent any
             steps {
                 echo 'Deploying...'
-//                sh docker tag siteprincipal 'denisurias/siteprincipal:0.1'
-//                sh docker push 'denisurias/siteprincipal:0.1'
+                sh 'docker tag siteprincipal denisurias/siteprincipal:0.1'
+                sh 'docker push denisurias/siteprincipal:0.1'
             }
         }
     }
