@@ -37,8 +37,9 @@ pipeline {
 
                 echo 'Upando para Docker Hub...'
                 sh 'docker tag siteprincipal denisurias/siteprincipal:0.1'
+                sh 'docker tag denisurias/siteprincipal:0.2 denisurias/siteprincipal:latest'
                 withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
-                    sh 'docker push denisurias/siteprincipal:0.1'
+                    sh 'docker push denisurias/siteprincipal:0.2'
                 }
 
                 echo 'Subindo container...'
