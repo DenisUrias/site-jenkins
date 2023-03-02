@@ -12,7 +12,7 @@ pipeline {
             
             agent {
                 dockerfile{
-                    additionalBuildArgs '--tag siteprincipal'
+                    additionalBuildArgs '--tag denis.urias/siteprincipal'
                     filename 'Dockerfile'
                     dir '.'
                 }
@@ -24,7 +24,7 @@ pipeline {
 //            }
         }
         
-        stage('Test') {
+        stage('Test.') {
             steps {
                 echo 'Testing...'
             }
@@ -33,6 +33,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+                docker tag siteprincipal denisurias/siteprincipal:0.1
+                docker push denisurias/siteprincipal:0.1
             }
         }
     }
