@@ -36,7 +36,7 @@ pipeline {
                     image 'siteprincipal'
                     args 'docker tag siteprincipal denisurias/siteprincipal:0.1'
                     args 'docker push denisurias/siteprincipal:0.1'
-                    registryCredentialsId 'dockerhub'
+ //                   registryCredentialsId 'dockerhub'
                     registryUrl 'hub.docker.com'
                 }
             }
