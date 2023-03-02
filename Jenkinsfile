@@ -34,10 +34,16 @@ pipeline {
             agent any
             steps {
                 echo 'Deploying...'
+
+                echo 'Upando para Docker Hub...'
                 sh 'docker tag siteprincipal denisurias/siteprincipal:0.1'
                 withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
                     sh 'docker push denisurias/siteprincipal:0.1'
                 }
+
+                echo 'Subindo container...'
+                sh 'docker-compose up -d'
+
             }
         }
     }
