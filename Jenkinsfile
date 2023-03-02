@@ -33,8 +33,8 @@ pipeline {
         stage('Deploy') {
             agent {
                 docker {
-                    args 'docker tag siteprincipal \'denisurias/siteprincipal:0.1\''
-                    args 'docker push 'denisurias/siteprincipal:0.1''
+                    args 'docker tag siteprincipal denisurias/siteprincipal:0.1'
+                    args 'docker push denisurias/siteprincipal:0.1'
                     registryCredentialsId 'denisurias'
                     registryUrl 'hub.docker.com'
                 }
